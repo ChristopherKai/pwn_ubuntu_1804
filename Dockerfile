@@ -1,7 +1,10 @@
 FROM  ubuntu:18.04
 WORKDIR /opt
 USER root
-RUN apt update && apt install python-pip -y 
+RUN apt update && apt install python-pip -y && apt install openssh-server -y && sed -i "s|#PermitRootLogin no|PermitRootLogin yes|g" /etc/ssh/sshd_config && service ssh restart\
+    &&  apt-get install -y locales && locale-gen en_US.UTF-8 
+ENV LC_ALL=en_US.UTF-8 
+ENV PYTHONIOENCODING=UTF-8
 RUN pip install pwntools &&  pip install capstone && pip install ropgadget && apt install ruby -y && gem install one_gadget
 RUN apt-get install -y git &&  pip install formatStringExploiter && pip install ipython 
 RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcSearcher && python setup.py develop && cd - \ 
