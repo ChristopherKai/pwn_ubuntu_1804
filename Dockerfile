@@ -10,4 +10,6 @@ RUN apt-get install -y git &&  pip install formatStringExploiter && pip install 
 RUN apt-get install -y sudo 
 RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcSearcher && python setup.py develop && cd - \ 
     && git clone https://github.com/ChristopherKai/mypwndbg.git && cd mypwndbg && ./setup.sh && cd - \
-    && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -\
+    && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -
+RUN apt-get install -y tmux 
+RUN git clone https://github.com/ChristopherKai/mytools.git && ln /usr/bin/gentemplate mytools/gentemplate/gentemplate.py
