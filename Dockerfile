@@ -6,7 +6,8 @@ RUN apt update && apt install python-pip -y && apt install openssh-server -y && 
 ENV LC_ALL=en_US.UTF-8 
 ENV PYTHONIOENCODING=UTF-8
 RUN pip install pwntools &&  pip install capstone && pip install ropgadget && apt install ruby -y && gem install one_gadget
-RUN apt-get install -y git &&  pip install formatStringExploiter && pip install ipython 
+RUN apt-get install -y git &&  pip install formatStringExploiter && pip install ipython
+RUN apt-get install -y sudo 
 RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcSearcher && python setup.py develop && cd - \ 
     && git clone https://github.com/ChristopherKai/mypwndbg.git && cd mypwndbg && ./setup.sh && cd - \
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -\
