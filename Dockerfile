@@ -13,6 +13,6 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -
 RUN apt-get install -y tmux 
 RUN git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
-
+RUN echo "root:root" | chpasswd
 EXPOSE 22
 CMD ["service", "ssh", "start"]
