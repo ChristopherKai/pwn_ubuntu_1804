@@ -1,7 +1,7 @@
 FROM  ubuntu:18.04
 WORKDIR /opt
 USER root
-RUN apt update && apt install python-pip -y && apt install openssh-server -y && sed -i "s|#PermitRootLogin no|PermitRootLogin yes|g" /etc/ssh/sshd_config && service ssh restart\
+RUN apt update && apt install python-pip -y && apt install openssh-server -y && sed -i "s|#PermitRootLogin prohibit-password|PermitRootLogin yes|g" /etc/ssh/sshd_config && service ssh restart\
     &&  apt-get install -y locales && locale-gen en_US.UTF-8 
 ENV LC_ALL=en_US.UTF-8 
 ENV PYTHONIOENCODING=UTF-8
