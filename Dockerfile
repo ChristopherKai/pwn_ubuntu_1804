@@ -12,4 +12,7 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/ChristopherKai/mypwndbg.git && cd mypwndbg && ./setup.sh && cd - \
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -
 RUN apt-get install -y tmux 
-RUN git clone https://github.com/ChristopherKai/mytools.git && ln /usr/bin/gentemplate mytools/gentemplate/gentemplate.py
+RUN git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
+
+EXPOSE 22
+CMD ["service", "ssh", "start"]
