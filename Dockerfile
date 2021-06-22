@@ -14,7 +14,6 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
 RUN apt-get install -y tmux 
 RUN git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
 RUN echo "root:root" | chpasswd
-COPY ./entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 EXPOSE 22
 ENTRYPOINT [ "/entrypoint.sh" ]
