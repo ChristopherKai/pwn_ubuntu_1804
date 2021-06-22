@@ -17,4 +17,4 @@ RUN echo "root:root" | chpasswd
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 EXPOSE 22
-ENTRYPOINT [ "/bin/bash","/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
