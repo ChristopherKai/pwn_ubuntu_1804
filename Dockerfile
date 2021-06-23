@@ -12,5 +12,6 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
 RUN echo "root:root" | chpasswd
 COPY entrypoint.sh /opt
+RUN chmod +x /opt/entrypoint.sh
 EXPOSE 22
 ENTRYPOINT [ "/opt/entrypoint.sh" ]
