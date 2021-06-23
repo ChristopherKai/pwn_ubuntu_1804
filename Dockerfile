@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir pwntools capstone ropgadget formatStringExploiter
 RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcSearcher && python setup.py develop && cd - \ 
     && git clone https://github.com/ChristopherKai/mypwndbg.git && cd mypwndbg && ./setup.sh && cd - \
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -\
-    git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
+    && git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
 RUN echo "root:root" | chpasswd
 COPY entrypoint.sh /opt
 EXPOSE 22
