@@ -9,7 +9,7 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/pwndbg/pwndbg.git && cd pwndbg && ./setup.sh && cd - \
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -\
     && git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
-RUN echo "root:root" | chpasswd && \
+RUN echo "root:root" | chpasswd \
     # config pwndbg 
     && echo "set context-code-lines 5"  >> /root/.gdbinit \
     && echo "set context-sections regs disasm code ghidra stack  expressions" >>/root/.gdbinit
