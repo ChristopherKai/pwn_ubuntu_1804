@@ -11,8 +11,8 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
 RUN echo "root:root" | chpasswd \
     # config pwndbg 
-    && echo "set context-code-lines 5"  >> /root/.gdbinit \
-    && echo "set context-sections regs disasm code ghidra stack  expressions" >>/root/.gdbinit
+    && printf "set context-code-lines 5\nset context-sections regs disasm code ghidra stack  expressions" >>/root/.gdbinit \
+    && printf "\nexport LC_ALL=en_US.UTF-8\nexport PYTHONIOENCODING=UTF-8" >> /etc/profile 
 COPY entrypoint.sh /opt
 RUN chmod +x /opt/entrypoint.sh
 EXPOSE 22
