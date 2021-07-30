@@ -8,7 +8,7 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/pwndbg/pwndbg.git && cd pwndbg && ./setup.sh && cd - \
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -\
     && git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate
-RUN echo "root:root" | chpasswd && echo "nameserver 114.114.114.114" >> /etc/resolv.conf && echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+RUN echo "root:root" | chpasswd
 COPY entrypoint.sh /opt
 RUN chmod +x /opt/entrypoint.sh
 EXPOSE 22
