@@ -16,9 +16,9 @@ RUN echo "root:root" | chpasswd \
     && printf "set context-code-lines 5\nset context-sections regs disasm code ghidra stack  expressions" >>/root/.gdbinit \
     && printf "\nexport LC_ALL=en_US.UTF-8\nexport PYTHONIOENCODING=UTF-8" >> /etc/profile 
 
-# misc tools
+# misc  and web tools
 RUN git clone https://github.com/Rup0rt/pcapfix.git && cd pcapfix && make && make install && cd -\
-    && git clone https://github.com/brendan-rius/c-jwt-cracker.git && cd c-jwt-cracker &&　make
+    && git clone https://github.com/brendan-rius/c-jwt-cracker.git && cd c-jwt-cracker && make
 COPY entrypoint.sh /opt
 RUN chmod +x /opt/entrypoint.sh
 EXPOSE 22
