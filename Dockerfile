@@ -1,4 +1,4 @@
-FROM  ubuntu:18.04
+FROM  ubuntu:bionic-20180426
 WORKDIR /opt
 USER root
 # pwndbg dependencies: libc6-dbg libc-dbg:i386 locales sudo
