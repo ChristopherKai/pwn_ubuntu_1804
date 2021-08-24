@@ -11,7 +11,7 @@ RUN git clone https://github.com/ChristopherKai/myLibcSearcher.git && cd myLibcS
     && git clone https://github.com/pwndbg/pwndbg.git && cd pwndbg && ./setup.sh && cd - \
     && git clone https://github.com/ChristopherKai/coolpwn.git && cd coolpwn && python setup.py install && cd -\
     && git clone https://github.com/ChristopherKai/mytools.git && ln /opt/mytools/gentemplate/gentemplate.py /usr/local/bin/gentemplate \
-    && git clone https://github.com/shellphish/how2heap.git && cd how2heap && ./glibc_build.sh  -j 10 2.27
+    && git clone https://github.com/shellphish/how2heap.git && cd how2heap && ./glibc_build.sh  -j `nproc` 2.27
 # Misc and Web tools
 # Misc: pcapfix
 # Web: c-jwt-cracker
