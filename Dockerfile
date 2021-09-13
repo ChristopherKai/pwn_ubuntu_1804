@@ -1,4 +1,4 @@
-FROM  ubuntu:18.04
+FROM ubuntu:bionic-20180426
 WORKDIR /opt
 USER root
 COPY entrypoint.sh /opt
